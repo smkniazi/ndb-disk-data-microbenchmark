@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+java -Djava.library.path=$DIR -Xms10G -Xmx20G  -XX:MaxDirectMemorySize=1000m -jar $DIR/../target/ndb-disk-data-microbenchmark-1.0-jar-with-dependencies.jar -schema "hop_salman" -dbHost "localhost:1186" -numThreads 1 

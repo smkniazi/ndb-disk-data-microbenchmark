@@ -1,0 +1,10 @@
+#!/bin/bash
+
+pushd . 
+cd ..
+mvn assembly:assembly 
+cd ..
+tar cjf ndb-disk-data-microbenchmark.tar.gz ndb-disk-data-microbenchmark
+scp ndb-disk-data-microbenchmark.tar.gz salman@cloud18.sics.se:/home/salman/
+
+popd
